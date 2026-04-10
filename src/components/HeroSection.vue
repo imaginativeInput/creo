@@ -218,21 +218,84 @@ import { useI18n } from 'vue-i18n';
 }
 
 @media (max-width: 768px) {
-  /* .hero h1.title1 {
-    font-size: 2.5rem;
+  .hero {
+    padding: 80px 1.25rem 2rem;
+    justify-content: center;
   }
-  .title1, .title2, .title3 {
-    font-size: 2.5rem;
+
+  .content {
+    margin-top: 0;
+    padding: 1.5rem 1.25rem 1.75rem;
+    width: 100%;
+    max-width: 340px;
+    background: rgba(245, 245, 245, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  }
+
+  .hero h1.title1,
+  .title1,
+  .title2,
+  .title3 {
+    font-size: 3rem;
+  }
+
+  .hero h1.title1 {
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
   }
 
   .title2 {
-    top: -28px;
-    left: -1px;
+    top: -3px;
+    left: -4px;
   }
 
   .title3 {
-    top: -30px;
-    left: -2px;
-  } */
+    top: -4px;
+    left: -5px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.1em;
+  }
+
+  .contact-block {
+    margin-top: 0.5rem;
+    gap: 0.75rem;
+  }
+
+  .contact-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .contact-items {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .contact-link {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .content {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+
+  .hero h1.title1,
+  .title1,
+  .title2,
+  .title3 {
+    font-size: 2.5rem;
+  }
 }
 </style>
