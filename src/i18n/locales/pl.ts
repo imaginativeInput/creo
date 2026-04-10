@@ -23,9 +23,9 @@ export default {
 
   about: {
     label: 'Nasza historia',
-    heading: 'Wysokiej jakości produkty i ekspresowe tempo',
+    heading: 'Tworzymy wyjątkowe produkty dla naszych klientów',
     para1: 'CREO to nie tylko firma - to rodzina, która wie jak sprawić, by każdy poczuł się wyjątkowo.',
-    para2: 'Z pasją podchodzimy do każdego zamówienia, dbając o każdy detal. Nasze doświadczenie i zaangażowanie sprawiają, że jesteśmy liderem w branży.',
+    para2: 'Z pasją podchodzimy do każdego zamówienia, dbając o każdy detal. Nasze doświadczenie i zaangażowanie sprawiają, że jesteśmy niezastąpieni.',
     stat_years_label: 'lat doświadczenia',
     stat_dishes_label: 'zrealizowanych projektów',
     stat_fresh_label: 'Satysfakcji',

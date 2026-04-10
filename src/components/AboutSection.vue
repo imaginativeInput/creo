@@ -42,7 +42,7 @@ onMounted(async () => {
         <p class="about-paragraph">{{ $t('about.para2') }}</p>
         <div class="about-stats">
           <div class="about-stat">
-            <span class="stat-number">15+</span>
+            <span class="stat-number">25+</span>
             <span class="stat-label">{{ $t('about.stat_years_label') }}</span>
           </div>
           <div class="about-stat">
@@ -57,17 +57,68 @@ onMounted(async () => {
       </div>
 
       <div class="about-image-wrap" ref="imageRef">
-        <div class="about-image-frame">
+        <!-- <div class="about-image-frame">
           <img
             :src="aboutImageUrl"
             :alt="$t('about.image_alt')"
             class="about-image"
           />
+        </div> -->
+
+        <div class="about-grid">
+          <div class="about-grid-item">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Box base -->
+  <rect x="10" y="24" width="44" height="30" rx="2"/>
+  <!-- Lid -->
+  <rect x="8" y="18" width="48" height="8" rx="1.5"/>
+  <!-- Vertical ribbon -->
+  <line x1="32" y1="18" x2="32" y2="54"/>
+  <!-- Bow left loop -->
+  <path d="M32 18 C 24 18, 20 10, 24 8 C 28 6, 32 12, 32 18 Z"/>
+  <!-- Bow right loop -->
+  <path d="M32 18 C 40 18, 44 10, 40 8 C 36 6, 32 12, 32 18 Z"/>
+</svg>
+
+          </div>
+          <div class="about-grid-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- T-shirt outline: shoulders, sleeves, body -->
+  <path d="M22 10 L10 18 L16 26 L22 22 L22 56 L42 56 L42 22 L48 26 L54 18 L42 10 Z"/>
+  <!-- Collar -->
+  <path d="M22 10 Q32 18 42 10"/>
+  <!-- Company name text on shirt -->
+  <text x="32" y="26"
+        text-anchor="middle" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-size="5"
+        font-weight="600" 
+        fill="#fff" 
+        stroke="none">CREO</text>
+</svg>
+
+          </div>
+          <div class="about-grid-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Back left person head -->
+  <circle cx="16" cy="22" r="6"/>
+  <!-- Back left person shoulders -->
+  <path d="M4 46 C 4 38, 10 34, 16 34 C 18 34, 20 34.5, 22 35.5"/>
+  <!-- Back right person head -->
+  <circle cx="48" cy="22" r="6"/>
+  <!-- Back right person shoulders -->
+  <path d="M60 46 C 60 38, 54 34, 48 34 C 46 34, 44 34.5, 42 35.5"/>
+  <!-- Front person head (larger, centered, in front) -->
+  <circle cx="32" cy="24" r="8"/>
+  <!-- Front person shoulders/body -->
+  <path d="M16 54 C 16 44, 23 38, 32 38 C 41 38, 48 44, 48 54"/>
+</svg>
+          </div>
         </div>
-        <div class="about-image-badge">
+        <!-- <div class="about-image-badge">
           <span class="badge-line1">{{ $t('about.badge_line1') }}</span>
           <span class="badge-line2">{{ $t('about.badge_line2') }}</span>
-        </div>
+        </div> -->
       </div>
 
     </div>
@@ -178,6 +229,23 @@ onMounted(async () => {
   transform: scale(1.03);
 }
 
+.about-grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.about-grid-item {
+  position: relative;
+  border-radius: 12px;
+  border: 4px solid var(--orange);
+  overflow: hidden;
+  /* box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1); */
+  width: 256px;
+  height: 256px;
+  /* height: auto; */
+}
+
 .about-image-badge {
   position: absolute;
   bottom: -1.5rem;
@@ -186,7 +254,7 @@ onMounted(async () => {
   color: var(--white);
   padding: 1.1rem 1.4rem;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 146, 70, 0.35);
+  box-shadow: 0 8px 24px rgba(254, 138, 21, 0.833);
   display: flex;
   flex-direction: column;
   line-height: 1.2;

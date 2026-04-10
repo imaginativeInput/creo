@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Back left person head -->
+  <circle cx="16" cy="22" r="6"/>
+  <!-- Back left person shoulders -->
+  <path d="M4 46 C 4 38, 10 34, 16 34 C 18 34, 20 34.5, 22 35.5"/>
+  <!-- Back right person head -->
+  <circle cx="48" cy="22" r="6"/>
+  <!-- Back right person shoulders -->
+  <path d="M60 46 C 60 38, 54 34, 48 34 C 46 34, 44 34.5, 42 35.5"/>
+  <!-- Front person head (larger, centered, in front) -->
+  <circle cx="32" cy="24" r="8"/>
+  <!-- Front person shoulders/body -->
+  <path d="M16 54 C 16 44, 23 38, 32 38 C 41 38, 48 44, 48 54"/>
+</svg>

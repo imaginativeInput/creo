@@ -1,4 +1,4 @@
-<template>
+<template>  
   <section class="hero" id="home">
     <div class="container">
       <h1 class="title1">{{ $t('hero.title') }}
@@ -20,6 +20,8 @@ import { useI18n } from 'vue-i18n';
   color: rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   text-align: center;
+
+  animation: dropIn 0.8s ease-out forwards;
 }
 
 .title2 {
@@ -27,7 +29,7 @@ import { useI18n } from 'vue-i18n';
   top: -8px;
   left: -10px;
   width: 100%;
-  color: #fff;
+  color: #444;
   font-size: 7.5rem;
   filter: blur(0);
 }
@@ -38,7 +40,7 @@ import { useI18n } from 'vue-i18n';
   left: -12px;
   width: 100%;
   color: var(--orange);
-  /* color: #ff8440; */
+  color: #ff8440;
   /* color: #e9e9e9; */
   font-size: 7.5rem;
   filter: blur(0px);

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Box base -->
+  <rect x="10" y="24" width="44" height="30" rx="2"/>
+  <!-- Lid -->
+  <rect x="8" y="18" width="48" height="8" rx="1.5"/>
+  <!-- Vertical ribbon -->
+  <line x1="32" y1="18" x2="32" y2="54"/>
+  <!-- Bow left loop -->
+  <path d="M32 18 C 24 18, 20 10, 24 8 C 28 6, 32 12, 32 18 Z"/>
+  <!-- Bow right loop -->
+  <path d="M32 18 C 40 18, 44 10, 40 8 C 36 6, 32 12, 32 18 Z"/>
+</svg>
