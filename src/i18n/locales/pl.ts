@@ -11,9 +11,8 @@ export default {
     directions: 'Dojazd',
     contact: 'Kontakt',
     find_us: 'Tu nas znajdziesz',
-    mon_thu: 'Pon – Czw',
-    fri_sat: 'Pt – Sb',
-    sunday: 'Niedziela',
+    mon_fri: 'Pon – Pt',
+    sat_sun: 'Sob – Ndz',
   },
 
   hero: {

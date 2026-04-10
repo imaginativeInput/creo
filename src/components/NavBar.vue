@@ -15,14 +15,13 @@ const mobileMenuOpen = ref(false)
 
 
 const config = ref({
-  phone: '+48 663 841 910',
+  phone: '+48 509 023 333',
   address_street: 'ul. Spokojna 9',
   address_city: '05-500 Piaseczno',
   maps_url: 'https://www.google.com/maps/place/Spokojna+9,+05-500+Piaseczno/@52.0522059,21.0148789,15z/data=!4m6!3m5!1s0x47192fb6cc5e00c1:0x45ca4e6f94bbc43!8m2!3d52.0520329!4d21.0143779!16s%2Fg%2F11c2czjfvg?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D',
-  hours_mon_thu: '12:00 – 22:00',
-  hours_fri: '12:00 – 23:00',
-  hours_sat: '12:00 – 23:00',
-  hours_sun: '12:00 – 22:00',
+  hours_mon_fri: '9:00 – 17:00',
+  hours_sat: 'Zamknięte',
+  hours_sun: 'Zamknięte',
   hours_note: '',
   facebook_url: '#',
   instagram_url: '#',
@@ -64,10 +63,7 @@ function navigateHash(hash: string) {
     </div>
     <ul class="nav-links">
       <li class="nav-link-item"><a href="#about" @click.prevent="navigateHash('#about')">{{ $t('nav.about') }}</a></li>
-      <!-- <li class="nav-link-item"><router-link to="/reservation" @click="closeMobileMenu">{{ $t('nav.reservation') }}</router-link></li> -->
-      <!-- <li class="nav-link-item"><a href="#events" @click.prevent="navigateHash('#events')">{{ $t('nav.events') }}</a></li> -->
-      <!-- <li class="nav-link-item"><a href="#location" @click.prevent="navigateHash('#location')">{{ $t('nav.directions') }}</a></li> -->
-      <li class="nav-link-item"><a href="#contact" @click.prevent="navigateHash('#contact')">{{ $t('nav.contact') }}</a></li>
+   <li class="nav-link-item"><a href="#contact" @click.prevent="navigateHash('#contact')">{{ $t('nav.contact') }}</a></li>
     
       <!-- <li class="nav-social">
         <a :href="config.facebook_url" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="nav-social-link">
@@ -119,29 +115,43 @@ function navigateHash(hash: string) {
       </div> -->
 
       <a href="#about" class="mobile-menu-link" @click.prevent="navigateHash('#about')">{{ $t('nav.about') }}</a>
-      <!-- <a href="#events" class="mobile-menu-link" @click.prevent="navigateHash('#events')">{{ $t('nav.events') }}</a> -->
-      <!-- <a href="#location" class="mobile-menu-link" @click.prevent="navigateHash('#location')">{{ $t('nav.directions') }}</a> -->
-      <a href="#contact" class="mobile-menu-link" @click.prevent="navigateHash('#contact')">{{ $t('nav.contact') }}</a>
+     <a href="#contact" class="mobile-menu-link" @click.prevent="navigateHash('#contact')">{{ $t('nav.contact') }}</a>
 
       <!-- Info footer (milanovo-inspired) -->
       <div class="mobile-info">
         <div class="mobile-info-hours">
           <div class="mobile-hours-row">
-            <span class="mobile-hours-day">{{ $t('nav.mon_thu') }}</span>
-            <span class="mobile-hours-time">{{ config.hours_mon_thu }}</span>
+            <span class="mobile-hours-day">{{ $t('nav.mon_fri') }}</span>
+            <span class="mobile-hours-time">{{ config.hours_mon_fri }}</span>
           </div>
           <div class="mobile-hours-row">
-            <span class="mobile-hours-day">{{ $t('nav.fri_sat') }}</span>
-            <span class="mobile-hours-time">{{ config.hours_fri }}</span>
+            <span class="mobile-hours-day">{{ $t('nav.sat_sun') }}</span>
+            <span class="mobile-hours-time">{{ config.hours_sat }}</span>
           </div>
-          <div class="mobile-hours-row">
-            <span class="mobile-hours-day">{{ $t('nav.sunday') }}</span>
-            <span class="mobile-hours-time">{{ config.hours_sun }}</span>
-          </div>
+         
           <p class="mobile-hours-note">{{ config.hours_note }}</p>
+
+              <a href="mailto:creo@creo.pl" class="contact-link">
+          <span class="contact-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/>
+              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
+            </svg>
+          </span>
+          <span class="contact-text">creo@creo.pl</span>
+        </a>
+
+        <a href="tel:+48509023333" class="contact-link">
+          <span class="contact-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd"/>
+            </svg>
+          </span>
+          <span class="contact-text">+48 509 023 333</span>
+        </a>
         </div>
 
-        <div class="mobile-info-contact">
+        <!-- <div class="mobile-info-contact">
           <a :href="`tel:${config.phone.replace(/\s/g, '')}`" class="mobile-contact-item">
             <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 5.92 5.92l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -154,14 +164,43 @@ function navigateHash(hash: string) {
             </svg>
             {{ config.address_street }}, {{ config.address_city }}
           </span>
-          </div>
+          </div> -->
         </div>
       </div>
-    <!-- </div> -->
   </Transition>
 </template>
 
 <style scoped>
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 999px;
+  /* background: rgba(255, 255, 255, 0.65); */
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: rgba(226, 108, 43, 0.12);
+  color: var(--orange);
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+
 nav {
   position: fixed;
   top: 0;
@@ -267,22 +306,7 @@ nav {
   transition: color 0.3s, background 0.3s ease, border-radius 0.3s ease, border 0.3s ease, padding 0.3s ease;
 }
 
-.btn-cart:hover {
-  color: var(--green);
-}
 
-.cart-dot {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 9px;
-  height: 9px;
-  background: var(--green);
-  border-radius: 1rem;
-  border: 2px solid var(--white);
-  font-size: 0;
-  color: transparent;
-}
 
 /* Language switcher */
 .nav-lang {
@@ -343,7 +367,7 @@ nav {
   /* color: var(--white); */
 
   stroke: var(--white);
-  background: var(--green);
+  background: var(--orange);
 }
 
 .nav-social-link:hover svg {
@@ -386,7 +410,7 @@ nav {
 }
 
 .btn-user:hover {
-  color: var(--green);
+  color: var(--orange);
 }
 
 .user-dropdown {
@@ -488,7 +512,7 @@ nav {
 }
 
 .btn-hamburger:hover {
-  color: var(--green);
+  color: var(--orange);
 }
 
 /* Mobile menu — hidden on desktop */
@@ -512,7 +536,7 @@ nav {
 @media (max-width: 1024px) {
   nav.nav-menu-open {
     box-shadow: none;
-    /* background: #fff; */
+    background: var(--white);
   }
 
   .logo-img {
@@ -532,10 +556,10 @@ nav {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 84px;
+    top: 68px;
     left: 0;
     right: 0;
-    bottom: 0;
+    /* bottom: 0; */
     background: var(--white);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     z-index: 1001;
@@ -724,8 +748,8 @@ nav {
   }
 
   .mobile-social-btn:hover {
-    background: var(--green);
-    border-color: var(--green);
+    background: var(--orange);
+    border-color: var(--orange);
     color: var(--white);
     stroke: var(--white);
     fill: var(--white);

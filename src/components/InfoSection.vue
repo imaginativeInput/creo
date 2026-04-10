@@ -109,7 +109,6 @@ const config = ref({
   address_city: '05-500 Piaseczno',
   maps_url: 'https://www.google.com/maps/place/Spokojna+9,+05-500+Piaseczno/@52.0522059,21.0148789,15z/data=!4m6!3m5!1s0x47192fb6cc5e00c1:0x45ca4e6f94bbc43!8m2!3d52.0520329!4d21.0143779!16s%2Fg%2F11c2czjfvg?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D',
   hours_mon_fri: '9:00 – 17:00',
-  // hours_fri: '9:00 – 17:00',
   hours_sat: 'Zamknięte',
   hours_sun: 'Zamknięte',
   hours_note: '',
