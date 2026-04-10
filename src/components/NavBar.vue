@@ -60,7 +60,7 @@ function navigateHash(hash: string) {
 <template>
   <nav :class="{ 'nav-menu-open': mobileMenuOpen}">
     <div class="logo">
-      <img src="/logo-creo.jpg" :alt="$t('common.logo_alt')" class="logo-img" @click.prevent="goHome" />
+      <img src="/logo-creo-transparent.png" :alt="$t('common.logo_alt')" class="logo-img" @click.prevent="goHome" />
     </div>
     <ul class="nav-links">
       <li class="nav-link-item"><a href="#about" @click.prevent="navigateHash('#about')">{{ $t('nav.about') }}</a></li>
@@ -90,12 +90,12 @@ function navigateHash(hash: string) {
 
     <!-- Hamburger button (mobile only) -->
     <button class="btn-hamburger" @click="toggleMobileMenu" :aria-label="$t('nav.menu')">
-      <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg v-if="!mobileMenuOpen" xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="6" x2="21" y2="6"/>
         <line x1="3" y1="12" x2="21" y2="12"/>
         <line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
-      <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg v-else xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18"/>
         <line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
@@ -143,13 +143,13 @@ function navigateHash(hash: string) {
 
         <div class="mobile-info-contact">
           <a :href="`tel:${config.phone.replace(/\s/g, '')}`" class="mobile-contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 5.92 5.92l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             {{ config.phone }}
           </a>
           <span class="mobile-contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
             </svg>
             {{ config.address_street }}, {{ config.address_city }}
@@ -167,7 +167,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255,255,255,1);
+  background: rgba(255,255,255,0.99);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1001;
   display: flex;
@@ -509,7 +509,7 @@ nav {
 @media (max-width: 1024px) {
   nav.nav-menu-open {
     box-shadow: none;
-    background: #fff;
+    /* background: #fff; */
   }
 
   .logo-img {
@@ -574,37 +574,6 @@ nav {
     text-align: left;
   }
 
-  .mobile-menu-cart {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.55rem 0.5rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--dark);
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    border-radius: 6px;
-    min-height: 40px;
-    transition: background 0.2s;
-  }
-
-  .mobile-menu-cart:hover {
-    background: var(--light-gray);
-  }
-
-  .mobile-cart-badge {
-    background: var(--green);
-    color: var(--white);
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 0.1rem 0.45rem;
-    border-radius: 1rem;
-    min-width: 1.2rem;
-    text-align: center;
-  }
 
   .mobile-lang-row {
     display: flex;
@@ -612,25 +581,6 @@ nav {
     align-self: center;
     gap: 0.7rem;
     padding: 0.25rem 0;
-  }
-
-  .mobile-menu-order {
-    margin-top: 0.35rem;
-    background: var(--red);
-    color: var(--white);
-    padding: 0.6rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: inherit;
-    min-height: 40px;
-    transition: background 0.3s;
-  }
-
-  .mobile-menu-order:hover {
-    background: #b02530;
   }
 
   /* Collapsible account section */

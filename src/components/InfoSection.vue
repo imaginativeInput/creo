@@ -20,17 +20,17 @@
       <div class="info-col">
         <h3 class="col-heading">{{ $t('info.contact_heading') }}</h3>
         <ul class="info-list">
-          <li>
+          <!-- <li>
             <span class="info-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="https://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
               </svg>
             </span>
             <a :href="config.maps_url" target="_blank">{{ config.address_street }}<br>{{ config.address_city }}</a>
-          </li>
+          </li> -->
           <li>
             <span class="info-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="https://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 5.92 5.92l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </span>
@@ -38,7 +38,7 @@
           </li>
           <li>
             <span class="info-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="https://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
               </svg>
             </span>
@@ -77,7 +77,7 @@
         <ul class="nav-list">
           <li><a href="#about" @click.prevent="scrollTo('#about')">{{ $t('info.about') }}</a></li>
           <li><a href="#contact" @click.prevent="scrollTo('#contact')">{{ $t('info.contact_heading') }}</a></li>
-          <li><a href="#location" @click.prevent="scrollTo('#location')">{{ $t('info.directions') }}</a></li>
+          <!-- <li><a href="#location" @click.prevent="scrollTo('#location')">{{ $t('info.directions') }}</a></li> -->
         </ul>
         <!-- <div class="social-row">
           <a :href="config.facebook_url" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
@@ -103,7 +103,7 @@ import { ref, onMounted } from 'vue'
 
 // Defaults match the current hardcoded values so nothing breaks if API is unavailable
 const config = ref({
-  phone: '+48 663 841 910',
+  phone: '+48 509 023 333',
   contact_email: 'creo@creo.pl',
   address_street: 'ul. Spokojna 9',
   address_city: '05-500 Piaseczno',

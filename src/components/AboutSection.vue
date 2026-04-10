@@ -137,7 +137,7 @@ onMounted(async () => {
         stroke="none">CREO</text>
 </svg>
 
-<p>Akcesoria Reklamowe</p>
+<p>Upominki Reklamowe</p>
           </div>
         </div>
         <!-- <div class="about-image-badge">
@@ -156,6 +156,7 @@ onMounted(async () => {
   padding: 6rem 5%;
 
   font-family: 'General Sans', sans-serif;
+  z-index: 4;
 }
 
 .about-inner {

@@ -1,5 +1,7 @@
 <template>  
   <section class="hero" id="home">
+
+    <div class="content">
     <div class="container">
       <h1 class="title1">{{ $t('hero.title') }}
         <span class="title2">{{ $t('hero.title') }}</span>
@@ -13,7 +15,7 @@
       <div class="contact-items">
         <a href="mailto:creo@creo.pl" class="contact-link">
           <span class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/>
               <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
             </svg>
@@ -21,14 +23,15 @@
           <span class="contact-text">creo@creo.pl</span>
         </a>
 
-        <a href="tel:+48663841910" class="contact-link">
+        <a href="tel:+48509023333" class="contact-link">
           <span class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd"/>
             </svg>
           </span>
-          <span class="contact-text">+48 663 841 910</span>
+          <span class="contact-text">+48 509 023 333</span>
         </a>
+      </div>
       </div>
     </div>
 
@@ -84,7 +87,7 @@ import { useI18n } from 'vue-i18n';
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #888;
+  color: var(--white);
 }
 
 .contact-items {
@@ -144,8 +147,6 @@ import { useI18n } from 'vue-i18n';
 
 .hero {
   min-height: 100dvh;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
-  /* background: var(--orange); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,6 +156,41 @@ import { useI18n } from 'vue-i18n';
   padding-top: 60px;
 
   font-family: 'General Sans', sans-serif;
+
+  BACKGROUND-COLOR: rgba(0, 0, 0, 0.15);
+  background-blend-mode: overlay;
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url('@/assets/fresh-grass.jpg') center/cover no-repeat;
+
+  filter: blur(2px);
+
+  transform: scale(1.1);
+   /* prevents ugly edges after blur */
+
+  z-index: 0;
+}
+
+.content {
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(24px);
+  /* backdrop-filter: sepia(80%); */
+  background: rgba(255, 255, 255, 0.15);
+  /* background: var(--light-gray); */
+  padding: 2rem 8rem 4rem 8rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+
 }
 
 .hero h1.title1 {
@@ -169,7 +205,8 @@ import { useI18n } from 'vue-i18n';
   margin-bottom: 2rem;
   opacity: 0.9;
   color: black;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
+  /* font-weight: ; */
 }
 
 @media (max-width: 768px) {
