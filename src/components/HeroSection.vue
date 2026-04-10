@@ -68,8 +68,11 @@ import { useI18n } from 'vue-i18n';
   left: -12px;
   width: 100%;
   color: var(--orange);
-  color: #ff8440;
+  /* color: #ff8440; */
+  /* color: var(--white); */
   /* color: #e9e9e9; */
+  /* color: var(--salmon); */
+  /* color: var(--rose); */
   font-size: 7.5rem;
   filter: blur(0px);
 }
@@ -87,7 +90,9 @@ import { useI18n } from 'vue-i18n';
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  
   color: var(--white);
+  color: var(--orange);
 }
 
 .contact-items {
@@ -152,7 +157,7 @@ import { useI18n } from 'vue-i18n';
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--white);
+  /* color: var(--white); */
   padding-top: 60px;
 
   font-family: 'General Sans', sans-serif;
@@ -169,7 +174,7 @@ import { useI18n } from 'vue-i18n';
   position: absolute;
   inset: 0;
 
-  background: url('@/assets/fresh-grass.jpg') center/cover no-repeat;
+  background: url('@/assets/fresh-grass-compressed.webp') center/cover no-repeat;
 
   filter: blur(2px);
 
@@ -183,10 +188,12 @@ import { useI18n } from 'vue-i18n';
   margin-top: 2rem;
   position: relative;
   z-index: 2;
-  backdrop-filter: blur(24px);
-  /* backdrop-filter: sepia(80%); */
-  background: rgba(255, 255, 255, 0.15);
-  /* background: var(--light-gray); */
+  /* backdrop-filter: blur(6px); */
+  /* background: var(--rose); */
+  background: var(--light-gray);
+  background: rgba(245, 245, 245, 0.9);
+  /* background: rgba(255, 255, 255, 0.15); */
+  /* background: rgba(0,0,0, 1); */
   padding: 2rem 8rem 4rem 8rem;
   border-radius: 12px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
@@ -204,9 +211,10 @@ import { useI18n } from 'vue-i18n';
   font-size: 1.3rem;
   margin-bottom: 2rem;
   opacity: 0.9;
-  color: black;
+  /* color: var(--white); */
+  color: var(--dark);
   letter-spacing: 0.2em;
-  /* font-weight: ; */
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

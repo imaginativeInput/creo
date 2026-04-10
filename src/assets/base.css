@@ -32,6 +32,8 @@ html {
   --dark: #1a1a1a;
   --light-gray: #f5f5f5;
   --orange: #e26c2b;
+  --rose: rgb(253, 224, 203);
+  --salmon: rgb(255, 173, 114);
 }
 
 body {

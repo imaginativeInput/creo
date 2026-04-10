@@ -60,7 +60,7 @@ function navigateHash(hash: string) {
 <template>
   <nav :class="{ 'nav-menu-open': mobileMenuOpen}">
     <div class="logo">
-      <img src="/logo-creo-transparent.png" :alt="$t('common.logo_alt')" class="logo-img" @click.prevent="goHome" />
+      <img src="/logo-creo-transparent.webp" :alt="$t('common.logo_alt')" class="logo-img" @click.prevent="goHome" />
     </div>
     <ul class="nav-links">
       <li class="nav-link-item"><a href="#about" @click.prevent="navigateHash('#about')">{{ $t('nav.about') }}</a></li>
@@ -167,7 +167,10 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255,255,255,0.99);
+  background: rgba(255,255,255,0.95);
+  /* background: var(--rose); */
+  /* background: var(--salmon); */
+
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1001;
   display: flex;
