@@ -4,10 +4,13 @@ import { ref, onMounted } from 'vue'
 
 const sectionRef = ref(null)
 const textRef = ref(null)
-const imageRef = ref(null)
+const gridItemRefs = ref<HTMLElement[]>([])
 
-const FALLBACK_IMAGE = 'https://scontent-waw2-2.cdninstagram.com/v/t39.30808-6/469256966_17949243431903229_8967964131697965905_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=MzI3MzUxOTM2MDQ4NzM5NjAxNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjExOTl4MTQ5OS5zZHIuQzMifQ%3D%3D&_nc_ohc=irKgwhc0oNoQ7kNvwEjbyr9&_nc_oc=AdntIUp7p0dfOe0rks8-2YycgTAT8W1lqIrwGaycb4m0msYndScejaodBRq3yl5Lpos&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-waw2-2.cdninstagram.com&_nc_gid=GRepedUgQn7gPlCy8VTGzQ&_nc_ss=8&oh=00_AfziNQ2klkd-W9MHUT6XTc0r_Me4u_0t15ZVoNOlwxzbhg&oe=69BB66D8'
-const aboutImageUrl = ref(FALLBACK_IMAGE)
+const setGridItemRef = (el: Element | null) => {
+  if (el instanceof HTMLElement && !gridItemRefs.value.includes(el)) {
+    gridItemRefs.value.push(el)
+  }
+}
 
 onMounted(async () => {
   // try {
@@ -16,17 +19,29 @@ onMounted(async () => {
   // } catch {
   // }
 
-  const observer = new IntersectionObserver(
+  const textObserver = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
         textRef.value?.classList.add('slide-in')
-        imageRef.value?.classList.add('slide-in')
-        observer.disconnect()
+        textObserver.disconnect()
       }
     },
     { threshold: 0.1, rootMargin: '0px 0px -22% 0px' }
   )
-  if (sectionRef.value) observer.observe(sectionRef.value)
+  if (textRef.value) textObserver.observe(textRef.value)
+
+  const gridObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in')
+          gridObserver.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.25, rootMargin: '0px 0px -15% 0px' }
+  )
+  gridItemRefs.value.forEach((el) => gridObserver.observe(el))
 })
 </script>
 
@@ -38,15 +53,17 @@ onMounted(async () => {
         <span class="about-label">{{ $t('about.label') }}</span>
         <h2 class="about-heading" v-html="$t('about.heading').replace('\n', '<br>')"></h2>
         <div class="about-accent"></div>
-        <p class="about-paragraph">{{ $t('about.para1') }}</p>
+        <p class="about-paragraph"><strong style="color:#1A1A1A">{{ $t('about.para1a') }}</strong> {{ $t('about.para1b') }}</p>
         <p class="about-paragraph">{{ $t('about.para2') }}</p>
+        <p class="about-paragraph">{{ $t('about.para3') }}</p>
+        <p class="about-paragraph">{{ $t('about.para4') }}</p>
         <div class="about-stats">
           <div class="about-stat">
             <span class="stat-number">25+</span>
             <span class="stat-label">{{ $t('about.stat_years_label') }}</span>
           </div>
           <div class="about-stat">
-            <span class="stat-number">40+</span>
+            <span class="stat-number">1000+</span>
             <span class="stat-label">{{ $t('about.stat_dishes_label') }}</span>
           </div>
           <div class="about-stat">
@@ -56,7 +73,7 @@ onMounted(async () => {
         </div>
       </div>
 
-      <div class="about-image-wrap" ref="imageRef">
+      <div class="about-image-wrap">
         <!-- <div class="about-image-frame">
           <img
             :src="aboutImageUrl"
@@ -66,8 +83,8 @@ onMounted(async () => {
         </div> -->
 
         <div class="about-grid">
-          <div class="about-grid-item">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <div class="about-grid-item" :ref="setGridItemRef">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
   <!-- Box base -->
   <rect x="10" y="24" width="44" height="30" rx="2"/>
   <!-- Lid -->
@@ -79,40 +96,48 @@ onMounted(async () => {
   <!-- Bow right loop -->
   <path d="M32 18 C 40 18, 44 10, 40 8 C 36 6, 32 12, 32 18 Z"/>
 </svg>
-
+<p>Zestawy Podarunkowe</p>
           </div>
-          <div class="about-grid-item">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <div class="about-grid-item" :ref="setGridItemRef">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
   <!-- T-shirt outline: shoulders, sleeves, body -->
   <path d="M22 10 L10 18 L16 26 L22 22 L22 56 L42 56 L42 22 L48 26 L54 18 L42 10 Z"/>
   <!-- Collar -->
   <path d="M22 10 Q32 18 42 10"/>
   <!-- Company name text on shirt -->
   <text x="32" y="26"
+        text-anchor="middle"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="5"
+        font-weight="600"
+        fill="#fff"
+        stroke="none">CREO</text>
+</svg>
+<p>Odzież Reklamowa</p>
+          </div>
+          <div class="about-grid-item" :ref="setGridItemRef">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="var(--orange)" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Mug body -->
+  <path d="M12 16 L 12 48 C 12 52, 15 54, 19 54 L 39 54 C 43 54, 46 52, 46 48 L 46 16 Z"/>
+  <!-- Mug top rim -->
+  <ellipse cx="29" cy="16" rx="17" ry="3"/>
+  <!-- Handle -->
+  <path d="M46 24 C 54 24, 54 40, 46 40"/>
+  <!-- Steam lines -->
+  <path d="M22 4 C 20 7, 24 9, 22 12"/>
+  <path d="M30 4 C 28 7, 32 9, 30 12"/>
+  <path d="M38 4 C 36 7, 40 9, 38 12"/>
+  <!-- Company name on mug -->
+  <text x="29" y="38" 
         text-anchor="middle" 
         font-family="system-ui, -apple-system, sans-serif" 
-        font-size="5"
-        font-weight="600" 
-        fill="#fff" 
+        font-size="5" 
+        font-weight="700" 
+        fill="var(--white)" 
         stroke="none">CREO</text>
 </svg>
 
-          </div>
-          <div class="about-grid-item">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#e26c2b" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Back left person head -->
-  <circle cx="16" cy="22" r="6"/>
-  <!-- Back left person shoulders -->
-  <path d="M4 46 C 4 38, 10 34, 16 34 C 18 34, 20 34.5, 22 35.5"/>
-  <!-- Back right person head -->
-  <circle cx="48" cy="22" r="6"/>
-  <!-- Back right person shoulders -->
-  <path d="M60 46 C 60 38, 54 34, 48 34 C 46 34, 44 34.5, 42 35.5"/>
-  <!-- Front person head (larger, centered, in front) -->
-  <circle cx="32" cy="24" r="8"/>
-  <!-- Front person shoulders/body -->
-  <path d="M16 54 C 16 44, 23 38, 32 38 C 41 38, 48 44, 48 54"/>
-</svg>
+<p>Akcesoria Reklamowe</p>
           </div>
         </div>
         <!-- <div class="about-image-badge">
@@ -130,16 +155,17 @@ onMounted(async () => {
   background: var(--white);
   padding: 6rem 5%;
 
-  font-family: 'Nocturne', serif;
+  font-family: 'General Sans', sans-serif;
 }
 
 .about-inner {
-  max-width: 1100px;
+  max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr auto;
+  gap: 8rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* ── Text column ── */
@@ -237,13 +263,34 @@ onMounted(async () => {
 
 .about-grid-item {
   position: relative;
+  box-sizing: border-box;
   border-radius: 12px;
   border: 4px solid var(--orange);
   overflow: hidden;
   /* box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1); */
-  width: 256px;
-  height: 256px;
+  width: 300px;
+  height: 300px;
   /* height: auto; */
+}
+
+.about-grid-item svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 1.5rem;
+}
+.about-grid-item p {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
+  /* text-transform: uppercase; */
+  font-family: 'General Sans', sans-serif;
 }
 
 .about-image-badge {
@@ -276,12 +323,26 @@ onMounted(async () => {
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .about-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 
   .about-image-wrap {
     order: -1;
+    min-width: 0;
+  }
+
+  .about-grid {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .about-grid-item {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 
   .about-image-frame {
@@ -314,7 +375,7 @@ onMounted(async () => {
 
 /* ── Slide-in animation (one-shot on first scroll into view) ── */
 .about-text,
-.about-image-wrap {
+.about-grid-item {
   opacity: 0;
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
@@ -323,13 +384,12 @@ onMounted(async () => {
   transform: translateX(-48px);
 }
 
-.about-image-wrap {
+.about-grid-item {
   transform: translateX(48px);
-  transition-delay: 0.15s;
 }
 
 .about-text.slide-in,
-.about-image-wrap.slide-in {
+.about-grid-item.slide-in {
   opacity: 1;
   transform: translateX(0);
 }

@@ -52,13 +52,13 @@
         <h3 class="col-heading">{{ $t('info.hours_heading') }}</h3>
         <ul class="hours-list">
           <li>
-            <span class="hours-day">{{ $t('info.mon_thu') }}</span>
-            <span class="hours-time">{{ config.hours_mon_thu }}</span>
+            <span class="hours-day">{{ $t('info.mon_fri') }}</span>
+            <span class="hours-time">{{ config.hours_mon_fri }}</span>
           </li>
-          <li>
+          <!-- <li>
             <span class="hours-day">{{ $t('info.friday') }}</span>
             <span class="hours-time">{{ config.hours_fri }}</span>
-          </li>
+          </li> -->
           <li>
             <span class="hours-day">{{ $t('info.saturday') }}</span>
             <span class="hours-time">{{ config.hours_sat }}</span>
@@ -108,13 +108,13 @@ const config = ref({
   address_street: 'ul. Spokojna 9',
   address_city: '05-500 Piaseczno',
   maps_url: 'https://www.google.com/maps/place/Spokojna+9,+05-500+Piaseczno/@52.0522059,21.0148789,15z/data=!4m6!3m5!1s0x47192fb6cc5e00c1:0x45ca4e6f94bbc43!8m2!3d52.0520329!4d21.0143779!16s%2Fg%2F11c2czjfvg?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D',
-  hours_mon_thu: '12:00 – 22:00',
-  hours_fri: '12:00 – 23:00',
-  hours_sat: '12:00 – 23:00',
-  hours_sun: '12:00 – 22:00',
+  hours_mon_fri: '9:00 – 17:00',
+  // hours_fri: '9:00 – 17:00',
+  hours_sat: 'Zamknięte',
+  hours_sun: 'Zamknięte',
   hours_note: '',
-  facebook_url: '#',
-  instagram_url: '#',
+  // facebook_url: '#',
+  // instagram_url: '#',
 })
 
 // onMounted(async () => {
@@ -139,6 +139,7 @@ function scrollTo(hash) {
   color: #ccc;
 
   font-family: 'Nocturne', serif;
+  font-family: 'General Sans', sans-serif;
 }
 
 .info-flag-rule {

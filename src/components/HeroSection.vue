@@ -7,6 +7,31 @@
       </h1>
     </div>
     <p>{{ $t('hero.subtitle') }}</p>
+
+    <div class="contact-block">
+      <span class="contact-label">Skontaktuj się z nami</span>
+      <div class="contact-items">
+        <a href="mailto:creo@creo.pl" class="contact-link">
+          <span class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"/>
+              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"/>
+            </svg>
+          </span>
+          <span class="contact-text">creo@creo.pl</span>
+        </a>
+
+        <a href="tel:+48663841910" class="contact-link">
+          <span class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd"/>
+            </svg>
+          </span>
+          <span class="contact-text">+48 663 841 910</span>
+        </a>
+      </div>
+    </div>
+
   </section>
 </template>
 
@@ -46,22 +71,76 @@ import { useI18n } from 'vue-i18n';
   filter: blur(0px);
 }
 
-/* .title1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--orange);
-  opacity: 0.2;
+.contact-block {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
-.title2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+.contact-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.contact-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 108, 43, 0.3);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-link:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(226, 108, 43, 0.25);
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: rgba(226, 108, 43, 0.12);
   color: var(--orange);
-  opacity: 0.4;
-} */
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-link:hover .contact-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.contact-icon svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
 
 .hero {
   min-height: 100dvh;
@@ -80,7 +159,7 @@ import { useI18n } from 'vue-i18n';
 
 .hero h1.title1 {
   font-size: 7.5rem;
-  /* margin-bottom: 1rem; */
+  margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   /* color: var(--orange); */
 }

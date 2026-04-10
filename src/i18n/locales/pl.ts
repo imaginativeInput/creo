@@ -19,13 +19,17 @@ export default {
   hero: {
     title: 'CREO',
     subtitle: 'Wyjątkowe podejście do klienta.',
+    heading: 'Zadzwoń do nas:',
   },
 
   about: {
     label: 'Nasza historia',
     heading: 'Tworzymy wyjątkowe produkty dla naszych klientów',
-    para1: 'CREO to nie tylko firma - to rodzina, która wie jak sprawić, by każdy poczuł się wyjątkowo.',
-    para2: 'Z pasją podchodzimy do każdego zamówienia, dbając o każdy detal. Nasze doświadczenie i zaangażowanie sprawiają, że jesteśmy niezastąpieni.',
+    para1a: 'CREO to coś więcej niż produkcja gadżetów – to warsztat pomysłów, w którym każdy projekt zaczyna się od rozmowy i kończy na dopracowanym detalu.',
+    para1b: 'Od ponad 25 lat pomagamy firmom budować rozpoznawalność poprzez rzeczy, które można zobaczyć, dotknąć i zapamiętać.',
+    para2: 'Specjalizujemy się w tworzeniu odzieży reklamowej, zestawów podarunkowych oraz gadżetów, które realnie trafiają do ludzi – nie do szuflady. Niezależnie od tego, czy jest to elegancki upominek dla partnerów biznesowych, czy praktyczny zestaw dla pracowników, dbamy o to, by każdy element był spójny z wizerunkiem marki i wykonany z najwyższą starannością.',
+    para3: 'Jako rodzinna firma stawiamy na relacje i zaufanie. Pracujemy blisko z klientem, doradzamy rozwiązania, optymalizujemy pomysły i pilnujemy jakości na każdym etapie realizacji. Dzięki temu nasze projekty nie są przypadkowe – są przemyślane, funkcjonalne i skuteczne.',
+    para4: 'W świecie pełnym jednorazowych rozwiązań wierzymy w rzeczy, które zostają na dłużej. Dlatego łączymy doświadczenie z nowoczesnym podejściem, tworząc produkty, które nie tylko wyglądają dobrze, ale też pracują na wizerunek Twojej firmy każdego dnia.',
     stat_years_label: 'lat doświadczenia',
     stat_dishes_label: 'zrealizowanych projektów',
     stat_fresh_label: 'Satysfakcji',
@@ -35,12 +39,12 @@ export default {
   },
 
   info: {
-    brand_tagline: 'Wysokiej jakości produkty i ekspresowe tempo',
+    brand_tagline: 'Wysokiej jakości produkty i indywidualne podejście do klienta.',
     brand_desc: 'Znamy się na marketingu jak mało kto.',
     contact_heading: 'Kontakt',
     hours_heading: 'Godziny otwarcia',
     discover_heading: 'Odkryj nas',
-    mon_thu: 'Pon – Czw',
+    mon_fri: 'Pon – Pt',
     friday: 'Piątek',
     saturday: 'Sobota',
     sunday: 'Niedziela',
