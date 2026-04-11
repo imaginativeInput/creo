@@ -171,42 +171,12 @@ function navigateHash(hash: string) {
 </template>
 
 <style scoped>
-.contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-radius: 999px;
-  /* background: rgba(255, 255, 255, 0.65); */
-  color: var(--dark);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.01em;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 50%;
-  background: rgba(226, 108, 43, 0.12);
-  color: var(--orange);
-  flex-shrink: 0;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.9);
   /* background: var(--rose); */
   /* background: var(--salmon); */
 
@@ -532,6 +502,34 @@ nav {
   transform: translateY(-8px);
 }
 
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 999px;
+  /* background: rgba(255, 255, 255, 0.65); */
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: rgba(226, 108, 43, 0.12);
+  color: var(--orange);
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
 
 @media (max-width: 1024px) {
   nav.nav-menu-open {

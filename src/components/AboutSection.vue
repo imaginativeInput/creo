@@ -92,9 +92,9 @@ onMounted(async () => {
   <!-- Vertical ribbon -->
   <line x1="32" y1="18" x2="32" y2="54"/>
   <!-- Bow left loop -->
-  <path d="M32 18 C 24 18, 20 10, 24 8 C 28 6, 32 12, 32 18 Z"/>
+  <path fill="var(--white)" d="M32 18 C 24 18, 20 10, 24 8 C 28 6, 32 12, 32 18 Z"/>
   <!-- Bow right loop -->
-  <path d="M32 18 C 40 18, 44 10, 40 8 C 36 6, 32 12, 32 18 Z"/>
+  <path fill="var(--white)" d="M32 18 C 40 18, 44 10, 40 8 C 36 6, 32 12, 32 18 Z"/>
 </svg>
 <p>Zestawy Podarunkowe</p>
           </div>
@@ -122,7 +122,8 @@ onMounted(async () => {
   <!-- Mug top rim -->
   <ellipse cx="29" cy="16" rx="17" ry="3"/>
   <!-- Handle -->
-  <path d="M46 24 C 54 24, 54 40, 46 40"/>
+  <path d="M46 23 C 54 23, 54 41, 46 41" data-v-8f2cbd0c=""></path>
+  <path fill="var(--white)" d="M46 27 C 50 26, 50 38, 46 37" data-v-8f2cbd0c=""></path>
   <!-- Steam lines -->
   <path d="M22 4 C 20 7, 24 9, 22 12"/>
   <path d="M30 4 C 28 7, 32 9, 30 12"/>
